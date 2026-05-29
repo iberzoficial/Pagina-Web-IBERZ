@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/*
+  Hace que dark: utilities se activen SOLO cuando <html> tiene la clase "dark",
+  en lugar del comportamiento por defecto de Tailwind v4 (prefers-color-scheme).
+  Sin esta línea, el modo oscuro del sistema operativo siempre activa dark:.
+*/
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Variables de color ─────────────────────────────────────── */
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --church-50:  #f0fdf4;
+  --church-100: #dcfce7;
+  --church-200: #bbf7d0;
+  --church-400: #4ade80;
+  --church-500: #22c55e;
+  --church-600: #16a34a;
+  --church-700: #15803d;
+  --church-800: #166534;
+  --church-900: #14532d;
+}
+
+.dark {
+  --background: #020617;
+  --foreground: #e2e8f0;
+  --church-50:  #052e16;
+  --church-100: #14532d;
+  --church-200: #166534;
+  --church-400: #22c55e;
+  --church-500: #4ade80;
+  --church-600: #86efac;
+  --church-700: #4ade80;
+  --church-800: #bbf7d0;
+  --church-900: #dcfce7;
+}
+
+/* ── Tema en Tailwind ───────────────────────────────────────── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  /* Transición suave al cambiar de tema */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.font-serif {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+/* ── Scrollbar personalizado ────────────────────────────────── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #0f172a;
+  border-radius: 999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--church-700);
+  border-radius: 999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--church-500);
+}
