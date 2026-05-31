@@ -1,12 +1,11 @@
 import ClassesSection from "@/components/classes-section";
-import MobileNav from "@/components/mobile-nav";
 import SchedulesSection from "@/components/schedules-section";
-import ThemeToggle from "@/components/theme-toggle";
+import { ministryLinks } from "@/lib/ministries";
 import Image from "next/image";
+import Link from "next/link";
 import {
   FaBookBible,
   FaFacebookF,
-  FaFacebookMessenger,
   FaInstagram,
   FaLocationArrow,
   FaMapLocationDot,
@@ -16,59 +15,6 @@ import {
 export default function Home() {
   return (
     <main className="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
-      <nav className="sticky top-0 z-50 bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 shadow-sm">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          <div className="flex min-w-0 items-center gap-2.5 sm:gap-3">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/assets/Logo.jpeg"
-              alt="Logo IBERZ"
-              width={44}
-              height={44}
-              className="h-10 w-10 shrink-0 rounded-xl object-cover border border-slate-200 dark:border-slate-700 sm:h-11 sm:w-11"
-            />
-            <div className="min-w-0">
-              <p className="text-lg font-extrabold tracking-wider text-slate-900 dark:text-white leading-none sm:text-xl">
-                IBERZ
-              </p>
-              <p className="truncate text-[10px] uppercase tracking-wider text-[var(--church-700)] font-bold sm:text-[11px]">
-                El Redentor Zacamil
-              </p>
-            </div>
-          </div>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-300">
-            <a href="#inicio" className="hover:text-[var(--church-700)]">
-              Inicio
-            </a>
-            <a href="#redes" className="hover:text-[var(--church-700)]">
-              Redes Sociales
-            </a>
-            <a href="#podcast" className="hover:text-[var(--church-700)]">
-              Podcast
-            </a>
-            <a href="#horarios" className="hover:text-[var(--church-700)]">
-              Horarios
-            </a>
-            <a href="#ubicacion" className="hover:text-[var(--church-700)]">
-              Ubicación
-            </a>
-            <a
-              href="https://m.me/111972397092155"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-white bg-[var(--church-700)] hover:bg-[var(--church-600)] transition-all shadow-md shadow-[color:var(--church-700)]/10"
-            >
-              <FaFacebookMessenger className="text-base" />
-              Conectarse
-            </a>
-            <ThemeToggle />
-          </div>
-          <div className="md:hidden">
-            <MobileNav />
-          </div>
-        </div>
-      </nav>
-
       <header
         id="inicio"
         className="relative scroll-mt-24 overflow-hidden bg-white dark:bg-slate-950 py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800"
@@ -228,6 +174,12 @@ export default function Home() {
                 <FaInstagram className="mr-2" />
                 Ver Club Bíblico
               </a>
+              <Link
+                href="/ministerios/club-biblico"
+                className="mt-3 inline-flex items-center justify-center w-full px-5 py-3 rounded-xl text-sm font-bold text-[var(--church-700)] border border-[var(--church-200)] hover:bg-[var(--church-50)] transition-colors dark:text-[var(--church-400)] dark:border-[var(--church-800)] dark:hover:bg-[var(--church-900)]/20"
+              >
+                Conocer el ministerio
+              </Link>
             </article>
           </div>
         </div>
@@ -307,8 +259,8 @@ export default function Home() {
 
       <footer className="bg-slate-900 text-slate-300 border-t border-slate-800 pt-12 sm:pt-16 pb-10 sm:pb-12 dark:bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
-            <div className="md:col-span-2 space-y-6">
+          <div className="grid grid-cols-1 gap-12 border-b border-slate-800 pb-12 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="space-y-6 sm:col-span-2 lg:col-span-2">
               <div className="flex items-center space-x-3">
                 <Image
                   src="/assets/Logo.jpeg"
@@ -395,6 +347,21 @@ export default function Home() {
                     Ubicación
                   </a>
                 </li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h4 className="text-white font-bold text-sm tracking-wider uppercase">
+                Ministerios
+              </h4>
+              <ul className="space-y-2.5 text-sm">
+                {ministryLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="hover:text-emerald-400">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
