@@ -50,7 +50,7 @@ export default function Home() {
               Horarios
             </a>
             <a href="#ubicacion" className="hover:text-[var(--church-700)]">
-              Ubicacion
+              Ubicación
             </a>
             <a
               href="https://m.me/111972397092155"
@@ -111,7 +111,7 @@ export default function Home() {
               href="#horarios"
               className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-bold text-slate-700 dark:text-slate-100 bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 hover:border-[var(--church-200)] hover:bg-[var(--church-50)] dark:hover:bg-slate-800 transition-all"
             >
-              Horarios de Cultos
+              Horarios de cultos
             </a>
           </div>
         </div>
@@ -124,13 +124,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
             <h2 className="text-base font-semibold text-[var(--church-700)] tracking-wider uppercase">
-              Portal de Conexion
+              Portal de conexión
             </h2>
             <p className="mt-2 text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white font-serif">
-              Redes Sociales Oficiales
+              Redes sociales oficiales
             </p>
             <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
-              Acompananos en linea, sintoniza nuestras transmisiones, comparte
+              Acompáñanos en línea, sintoniza nuestras transmisiones, comparte
               con nosotros y mantente actualizado con todas las actividades de
               IBERZ.
             </p>
@@ -169,7 +169,7 @@ export default function Home() {
                   YouTube
                 </h3>
                 <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                  Repositorio de predicas completas, conferencias, ministerios
+                  Repositorio de prédicas completas, conferencias, ministerios
                   infantiles y alabanzas grabadas con alta calidad.
                 </p>
               </div>
@@ -192,8 +192,8 @@ export default function Home() {
                   Instagram
                 </h3>
                 <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                  Nuestras historias cotidianas, versiculos ilustrados,
-                  resumenes de actividades juveniles y boletines visuales.
+                  Nuestras historias cotidianas, versículos ilustrados,
+                  resúmenes de actividades juveniles y boletines visuales.
                 </p>
               </div>
               <a
@@ -212,10 +212,10 @@ export default function Home() {
                   <FaBookBible />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                  Club Biblico
+                  Club Bíblico
                 </h3>
                 <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                  Ministerio para prejovenes y jovenes los sabados. Actividades,
+                  Ministerio para prejóvenes y jóvenes los sábados. Actividades,
                   devocionales y contenido del club en Instagram.
                 </p>
               </div>
@@ -226,7 +226,7 @@ export default function Home() {
                 className="inline-flex items-center justify-center w-full px-5 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 transition-colors"
               >
                 <FaInstagram className="mr-2" />
-                Ver Club Biblico
+                Ver Club Bíblico
               </a>
             </article>
           </div>
@@ -246,14 +246,14 @@ export default function Home() {
             <div className="space-y-8">
               <div>
                 <h2 className="text-base font-semibold text-[var(--church-700)] tracking-wider uppercase">
-                  Encuentranos
+                  Encuéntranos
                 </h2>
                 <p className="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-serif">
-                  Nuestra Ubicacion
+                  Nuestra ubicación
                 </p>
                 <p className="mt-4 text-slate-600 dark:text-slate-300">
-                  Te esperamos con los brazos abiertos en la Coloni
-                  Zacamil. Nuestras instalaciones estan abiertas y listas para
+                  Te esperamos con los brazos abiertos en la Colonia
+                  Zacamil. Nuestras instalaciones están abiertas y listas para
                   recibirte en cada una de nuestras reuniones y actividades.
                 </p>
               </div>
@@ -264,7 +264,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-bold text-slate-950 text-base">
-                    Direccion IBERZ
+                    Dirección IBERZ
                   </h3>
                   <p className="text-slate-600 dark:text-slate-300 text-sm mt-1">
                     Calle Principal, Colonia Zacamil, Mejicanos, San
@@ -323,7 +323,7 @@ export default function Home() {
                 </span>
               </div>
               <p className="text-sm text-slate-400 max-w-sm">
-                Establecidos en la Colonia Zacamil, con el firme proposito
+                Establecidos en la Colonia Zacamil, con el firme propósito
                 de proclamar el evangelio de Cristo, capacitar a los creyentes y
                 servir con amor a la comunidad de Mejicanos.
               </p>
@@ -358,7 +358,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-slate-800 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition-colors"
-                  aria-label="Club Biblico en Instagram"
+                  aria-label="Club Bíblico en Instagram"
                 >
                   <FaBookBible />
                 </a>
@@ -387,12 +387,12 @@ export default function Home() {
                 </li>
                 <li>
                   <a href="#horarios" className="hover:text-emerald-400">
-                    Cultos y Horarios
+                    Cultos y horarios
                   </a>
                 </li>
                 <li>
                   <a href="#ubicacion" className="hover:text-emerald-400">
-                    Ubicacion
+                    Ubicación
                   </a>
                 </li>
               </ul>
@@ -400,11 +400,11 @@ export default function Home() {
 
             <div className="space-y-4">
               <h4 className="text-white font-bold text-sm tracking-wider uppercase">
-                Declaracion de Fe
+                Declaración de fe
               </h4>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Sostenemos la Biblia como nuestra unica norma infalible de fe y
-                conducta, inspirada por el Espiritu Santo para transformacion
+                Sostenemos la Biblia como nuestra única norma infalible de fe y
+                conducta, inspirada por el Espíritu Santo para transformación
                 personal y colectiva.
               </p>
               <span className="inline-flex items-center text-xs text-emerald-400 font-semibold uppercase">
@@ -415,10 +415,10 @@ export default function Home() {
 
           <div className="pt-8 flex flex-col items-center justify-between gap-3 text-center text-xs text-slate-500 sm:flex-row sm:text-left">
             <p>
-              © 2026 Iglesia Bautista el Redentor Zacamil (IBERZ). Todos los
+              © 2026 Iglesia Bautista El Redentor Zacamil (IBERZ). Todos los
               derechos reservados.
             </p>
-            <p className="mt-2 sm:mt-0">Disenado con amor y fe en El Salvador</p>
+            <p className="mt-2 sm:mt-0">Diseñado con amor y fe en El Salvador</p>
           </div>
         </div>
       </footer>

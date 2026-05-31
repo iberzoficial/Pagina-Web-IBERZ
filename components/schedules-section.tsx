@@ -39,22 +39,22 @@ type ScheduleEvent = {
 
 const scheduleEvents: ScheduleEvent[] = [
   {
-    title: "Cultos Dominicales",
+    title: "Cultos dominicales",
     frequency: "Todos los domingos",
     timeSlots: [
       { label: "1° Culto", time: "8:00 AM" },
       { label: "2° Culto", time: "10:00 AM" },
     ],
     description:
-      "Adoracion congregacional, predicacion y koinonia. Transmision en vivo por Facebook.",
+      "Adoración congregacional, predicación y . Transmisión en vivo por Facebook.",
     icon: <FaChurch />,
     accent: "from-emerald-500/20 to-green-500/10",
     iconBg:
       "bg-[var(--church-100)] dark:bg-[var(--church-900)]/40 text-[var(--church-700)] dark:text-[var(--church-400)]",
-    badge: "Dia Principal",
+    badge: "Día principal",
     action: {
       href: "https://www.facebook.com/iberzoficial/",
-      label: "Ver transmision",
+      label: "Ver transmisión",
       external: true,
       className:
         "bg-blue-600 hover:bg-blue-700 text-white shadow-sm shadow-blue-600/20",
@@ -62,15 +62,15 @@ const scheduleEvents: ScheduleEvent[] = [
     },
   },
   {
-    title: "Culto de Oracion",
+    title: "Culto de oración",
     frequency: "Cada martes",
     timeSlots: [{ time: "6:00 PM" }],
     description:
-      "Tiempo de consagracion, intercesion y busqueda de la presencia de Dios en comunidad.",
+      "Tiempo de consagración, intercesión y búsqueda de la presencia de Dios en comunidad.",
     icon: <FaHandsPraying />,
     accent: "from-violet-500/20 to-purple-500/10",
     iconBg: "bg-violet-100 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400",
-    badge: "Consagracion",
+    badge: "Consagración",
     action: {
       href: "#ubicacion",
       label: "Asistir presencial",
@@ -80,15 +80,15 @@ const scheduleEvents: ScheduleEvent[] = [
     },
   },
   {
-    title: "Estudio Biblico",
+    title: "Estudio bíblico",
     frequency: "Cada jueves",
     timeSlots: [{ time: "6:30 PM" }],
     description:
-      "Instruccion biblica expositiva para crecer en el conocimiento de las Escrituras.",
+      "Instrucción bíblica expositiva para crecer en el conocimiento de las Escrituras.",
     icon: <FaBookOpen />,
     accent: "from-amber-500/20 to-yellow-500/10",
     iconBg: "bg-amber-100 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400",
-    badge: "Instruccion",
+    badge: "Instrucción",
     action: {
       href: "https://music.youtube.com/playlist?list=PLoxl3jPkHFnS5gQ8EECpgOZErsfHu5TU0&si=wpOLKg_tFxX0RpeU",
       label: "Escuchar podcast",
@@ -99,18 +99,18 @@ const scheduleEvents: ScheduleEvent[] = [
     },
   },
   {
-    title: "Club Biblico",
-    frequency: "Cada sabado",
+    title: "Club bíblico",
+    frequency: "Cada sábado",
     timeSlots: [{ time: "2:30 PM" }],
     description:
-      "Ministerio para prejovenes y jovenes con actividades, devocionales y ensenanza biblica.",
+      "Ministerio para prejóvenes y jóvenes con actividades, devocionales y enseñanza bíblica.",
     icon: <FaUsers />,
     accent: "from-pink-500/20 to-rose-500/10",
     iconBg: "bg-pink-100 dark:bg-pink-950/40 text-pink-600 dark:text-pink-400",
-    badge: "Jovenes",
+    badge: "Jóvenes",
     action: {
       href: "https://www.instagram.com/cbiberz",
-      label: "Ver Club Biblico",
+      label: "Ver Club bíblico",
       external: true,
       className:
         "bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white shadow-sm",
@@ -118,27 +118,27 @@ const scheduleEvents: ScheduleEvent[] = [
     },
   },
   {
-    title: "Reunion de Mujeres",
-    frequency: "Cada 2° sabado del mes",
+    title: "Reunión de mujeres",
+    frequency: "Cada 2.º sábado del mes",
     timeSlots: [{ time: "3:00 PM" }],
     description:
-      "Encuentro de edificacion, oracion y comunidad entre hermanas de la iglesia.",
+      "Encuentro de edificación, oración y comunidad entre hermanas de la iglesia.",
     icon: <FaPersonDress />,
     accent: "from-rose-500/20 to-pink-500/10",
     iconBg: "bg-rose-100 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400",
-    badge: "Ministerio de Mujeres",
+    badge: "Ministerio de mujeres",
   },
   {
-    title: "Desayuno de Mujeres",
-    frequency: "Cada ultimo sabado del mes",
+    title: "Desayuno de mujeres",
+    frequency: "Cada último sábado del mes",
     timeSlots: [{ time: "8:30 AM" }],
     description:
-      "Desayuno de convivencia, alabanza y reflexion entre hermanas para iniciar el dia en comunidad.",
+      "Desayuno de convivencia, alabanza y reflexión entre hermanas para iniciar el día en comunidad.",
     icon: <FaMugHot />,
     accent: "from-amber-500/20 to-orange-500/10",
     iconBg:
       "bg-amber-100 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400",
-    badge: "Ministerio de Mujeres",
+    badge: "Ministerio de mujeres",
   },
 ];
 
@@ -213,11 +213,11 @@ export default function SchedulesSection() {
             Reuniones
           </span>
           <h2 className="mt-4 font-serif text-2xl font-extrabold text-slate-900 dark:text-white sm:text-3xl md:text-4xl">
-            Horarios y Actividades
+            Horarios y actividades
           </h2>
           <p className="mt-3 text-slate-600 dark:text-slate-300">
-            Cultos semanales, estudios biblicos y encuentros especiales. Te
-            esperamos en cada reunion.
+            Cultos semanales, estudios bíblicos y encuentros especiales. Te
+            esperamos en cada reunión.
           </p>
         </div>
 

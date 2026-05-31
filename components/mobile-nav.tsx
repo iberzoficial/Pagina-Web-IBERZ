@@ -9,7 +9,7 @@ const navLinks = [
   { href: "#redes", label: "Redes Sociales" },
   { href: "#podcast", label: "Podcast" },
   { href: "#horarios", label: "Horarios" },
-  { href: "#ubicacion", label: "Ubicacion" },
+  { href: "#ubicacion", label: "Ubicación" },
 ];
 
 export default function MobileNav() {
@@ -28,7 +28,7 @@ export default function MobileNav() {
           onClick={() => setOpen((prev) => !prev)}
           aria-expanded={open}
           aria-controls="mobile-menu"
-          aria-label={open ? "Cerrar menu" : "Abrir menu"}
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
           className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
         >
           {open ? <FaXmark className="text-lg" /> : <FaBars className="text-lg" />}

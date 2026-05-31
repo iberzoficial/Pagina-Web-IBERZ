@@ -1,16 +1,8 @@
 "use client";
 
+import { sortClasesByPublishedAt, type ClaseVideo } from "@/lib/youtube";
 import { useEffect, useMemo, useState } from "react";
 import { FaArrowUpRightFromSquare, FaBookOpen, FaHeadphones, FaPlay } from "react-icons/fa6";
-
-type ClaseVideo = {
-  id: string;
-  title: string;
-  publishedAt: string;
-  thumbnail: string;
-  youtubeUrl: string;
-  youtubeMusicUrl: string;
-};
 
 const fallbackClases: ClaseVideo[] = [
   {
@@ -149,7 +141,16 @@ export default function ClassesSection() {
     };
   }, []);
 
-  const latest = useMemo(() => clases[0], [clases]);
+  const sortedClases = useMemo(
+    () => sortClasesByPublishedAt(clases, "desc"),
+    [clases],
+  );
+
+  const latest = sortedClases[0];
+  const clasesForList = useMemo(
+    () => sortClasesByPublishedAt(clases, "asc"),
+    [clases],
+  );
 
   return (
     <section
@@ -161,7 +162,7 @@ export default function ClassesSection() {
           <div className="space-y-6 order-2 lg:order-1">
             <div className="rounded-2xl border border-slate-800 bg-slate-900/90 p-4 sm:p-5">
               <p className="text-xs uppercase tracking-widest text-church-400 font-bold mb-2">
-                Ultima clase detectada
+                Última clase detectada
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center mb-2">
                 <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-[var(--church-700)] to-emerald-500 text-white">
@@ -172,11 +173,11 @@ export default function ClassesSection() {
                 </h3>
               </div>
               <p className="text-xs text-slate-500 mt-1">
-                Estudio biblico expositivo secuencial
+                Estudio bíblico expositivo secuencial
               </p>
               <p className="text-sm text-slate-400 mt-2">
-                Esta tarjeta se actualiza automaticamente cuando suben un video
-                cuyo titulo inicia con &quot;Clase&quot;.
+                Esta tarjeta se actualiza automáticamente cuando suben un video
+                cuyo título inicia con &quot;Clase&quot;.
               </p>
               {latest && (
                 <a
@@ -205,7 +206,7 @@ export default function ClassesSection() {
                   <p className="text-sm text-slate-400">Cargando clases...</p>
                 )}
                 {!loading &&
-                  clases.map((clase, index) => (
+                  clasesForList.map((clase, index) => (
                     <a
                       key={clase.id}
                       href={clase.youtubeMusicUrl}
@@ -235,11 +236,11 @@ export default function ClassesSection() {
               Podcast y estudios
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-extrabold leading-tight">
-              Edificacion Biblica en Audio y Video
+              Edificación bíblica en audio y video
             </h2>
             <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
-              A traves de estudios expositivos profundos, analizamos versiculo
-              por versiculo los libros sagrados. Ponemos a tu disposicion toda
+              A través de estudios expositivos profundos, analizamos versículo
+              por versículo los libros sagrados. Ponemos a tu disposición toda
               la serie interactiva del Evangelio de Mateo de forma gratuita en
               tu plataforma de audio favorita.
             </p>

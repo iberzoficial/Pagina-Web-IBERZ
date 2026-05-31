@@ -14,7 +14,8 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Iglesia Bautista El Redentor Zacamil - IBERZ",
-  description: "Sitio oficial de IBERZ con clases y contenido actualizado.",
+  description:
+    "Sitio oficial de la Iglesia Bautista El Redentor Zacamil (IBERZ), con clases y contenido actualizado.",
 };
 
 export default function RootLayout({

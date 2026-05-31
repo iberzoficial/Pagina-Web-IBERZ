@@ -20,6 +20,27 @@ type YoutubeSearchResponse = {
 
 const YT_API_URL = "https://www.googleapis.com/youtube/v3/search";
 
+function extractClassNumber(title: string): number {
+  const match = title.match(/clase\s+(\d+)/i);
+  return match ? Number.parseInt(match[1], 10) : 0;
+}
+
+export function sortClasesByPublishedAt(
+  clases: ClaseVideo[],
+  direction: "desc" | "asc" = "desc",
+): ClaseVideo[] {
+  return [...clases].sort((a, b) => {
+    const dateDiff =
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+    if (dateDiff !== 0) {
+      return direction === "desc" ? dateDiff : -dateDiff;
+    }
+
+    const numberDiff = extractClassNumber(b.title) - extractClassNumber(a.title);
+    return direction === "desc" ? numberDiff : -numberDiff;
+  });
+}
+
 export async function fetchClaseVideosFromYoutube(): Promise<ClaseVideo[]> {
   const apiKey = process.env.YOUTUBE_API_KEY;
   const channelId = process.env.YOUTUBE_CHANNEL_ID;
@@ -74,5 +95,5 @@ export async function fetchClaseVideosFromYoutube(): Promise<ClaseVideo[]> {
     })
     .filter((video) => Boolean(video.id));
 
-  return clases;
+  return sortClasesByPublishedAt(clases, "desc");
 }
