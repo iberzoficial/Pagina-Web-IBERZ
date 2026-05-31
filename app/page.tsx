@@ -71,29 +71,30 @@ export default function Home() {
 
       <header
         id="inicio"
-        className="relative scroll-mt-24 bg-gradient-to-b from-[var(--church-50)] via-white to-white dark:from-slate-950 dark:via-slate-950 dark:to-slate-950 py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800"
+        className="relative scroll-mt-24 overflow-hidden bg-white dark:bg-slate-950 py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800"
       >
-        <div className="absolute inset-0">
+        <div className="absolute inset-0" aria-hidden>
           <Image
             src="/assets/Iglesia.png"
-            alt="Fondo iglesia"
+            alt=""
             fill
-            className="object-cover opacity-15 dark:opacity-20"
+            className="object-cover opacity-45 sm:opacity-50 dark:opacity-30"
             priority
             unoptimized
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--church-50)]/55 via-white/45 to-white/75 dark:from-slate-950/75 dark:via-slate-950/85 dark:to-slate-950/92" />
         </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="relative inline-flex rounded-full bg-[var(--church-100)] dark:bg-[var(--church-800)]/30 px-4 py-2 text-xs font-bold uppercase tracking-wider text-[var(--church-900)] dark:text-[var(--church-200)]">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="inline-flex rounded-full border border-[var(--church-200)] bg-[var(--church-100)] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[var(--church-900)] dark:border-[var(--church-600)]/50 dark:bg-[var(--church-100)]/70 dark:text-[var(--church-900)]">
             Bienvenidos a IBERZ
           </span>
-          <h1 className="relative mt-5 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight text-slate-900 dark:text-white">
+          <h1 className="mt-5 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight text-slate-900 dark:text-white">
             Una comunidad unida en la{" "}
             <span className="font-serif text-[var(--church-700)] italic">
               Gracia y la Verdad
             </span>
           </h1>
-          <p className="relative mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+          <p className="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             Somos la <strong>Iglesia Bautista El Redentor Zacamil</strong>.
             Nuestro anhelo es adorar a Dios, instruir a los creyentes en las
             Escrituras y proclamar el glorioso mensaje del Evangelio en
