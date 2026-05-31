@@ -158,9 +158,9 @@ export default function ClassesSection() {
       className="scroll-mt-24 py-14 bg-slate-950 text-white dark:bg-slate-950 border-t border-slate-800 sm:py-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-start">
-          <div className="space-y-6 order-2 lg:order-1">
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/90 p-4 sm:p-5">
+        <div className="grid grid-cols-1 gap-8 sm:gap-10 items-start lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)] xl:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)]">
+          <div className="order-2 space-y-6 lg:order-1">
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/90 p-4 sm:p-6">
               <p className="text-xs uppercase tracking-widest text-church-400 font-bold mb-2">
                 Última clase detectada
               </p>
@@ -192,16 +192,16 @@ export default function ClassesSection() {
               )}
             </div>
 
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5">
-              <div className="flex items-center justify-between mb-4">
-                <h4 className="text-xs uppercase tracking-widest text-slate-400 font-extrabold">
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 sm:p-6">
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <h4 className="text-xs font-extrabold uppercase tracking-widest text-slate-400">
                   Clases disponibles
                 </h4>
-                <span className="text-xs text-church-400 font-semibold">
+                <span className="shrink-0 text-xs font-semibold text-church-400">
                   {clases.length} clases
                 </span>
               </div>
-              <div className="custom-scrollbar max-h-72 overflow-y-auto space-y-2 pr-2">
+              <div className="custom-scrollbar max-h-80 space-y-2 overflow-y-auto pr-2 sm:max-h-96">
                 {loading && (
                   <p className="text-sm text-slate-400">Cargando clases...</p>
                 )}
@@ -212,17 +212,15 @@ export default function ClassesSection() {
                       href={clase.youtubeMusicUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between gap-2 rounded-xl border border-slate-800 bg-slate-950 p-3 hover:border-[var(--church-700)] hover:bg-[var(--church-900)]/20 transition-colors"
+                      className="group flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-950 p-3.5 transition-colors hover:border-[var(--church-700)] hover:bg-[var(--church-900)]/20 sm:gap-4 sm:p-4"
                     >
-                      <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                        <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-900 text-xs font-bold text-church-400">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <span className="truncate text-sm font-semibold text-slate-100">
-                          {clase.title}
-                        </span>
-                      </div>
-                      <span className="inline-flex shrink-0 items-center gap-1 text-xs text-slate-500">
+                      <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-900 text-xs font-bold text-church-400">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="min-w-0 flex-1 break-words text-sm font-semibold leading-snug text-slate-100">
+                        {clase.title}
+                      </span>
+                      <span className="mt-0.5 inline-flex shrink-0 items-center text-xs text-slate-500 transition-colors group-hover:text-church-400">
                         <FaArrowUpRightFromSquare className="text-[10px]" />
                       </span>
                     </a>
@@ -238,7 +236,7 @@ export default function ClassesSection() {
             <h2 className="font-serif text-3xl sm:text-4xl font-extrabold leading-tight">
               Edificación bíblica en audio y video
             </h2>
-            <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
+            <p className="text-justify text-sm leading-relaxed text-slate-300 sm:text-base">
               A través de estudios expositivos profundos, analizamos versículo
               por versículo los libros sagrados. Ponemos a tu disposición toda
               la serie interactiva del Evangelio de Mateo de forma gratuita en
