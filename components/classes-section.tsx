@@ -162,7 +162,7 @@ export default function ClassesSection() {
           <div className="order-2 space-y-6 lg:order-1">
             <div className="rounded-2xl border border-slate-800 bg-slate-900/90 p-4 sm:p-6">
               <p className="text-xs uppercase tracking-widest text-church-400 font-bold mb-2">
-                Última clase detectada
+                Última clase
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center mb-2">
                 <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-[var(--church-700)] to-emerald-500 text-white">
@@ -176,8 +176,7 @@ export default function ClassesSection() {
                 Estudio bíblico expositivo secuencial
               </p>
               <p className="text-sm text-slate-400 mt-2">
-                Esta tarjeta se actualiza automáticamente cuando suben un video
-                cuyo título inicia con &quot;Clase&quot;.
+                
               </p>
               {latest && (
                 <a
