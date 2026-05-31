@@ -1,5 +1,6 @@
 import MinistryPageContent from "@/components/ministry-page-content";
 import { getMinistryBySlug } from "@/lib/ministries";
+import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -20,12 +21,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const ministry = getMinistryBySlug(slug);
 
   if (!ministry) {
-    return { title: "Ministerio no encontrado | IBERZ" };
+    return { title: "Ministerio no encontrado" };
   }
 
+  const canonicalPath = `/ministerios/${slug}`;
+  const title = ministry.title;
+  const description = `${ministry.summary} ${siteConfig.shortName} · ${siteConfig.address.addressLocality}, El Salvador.`;
+
   return {
-    title: `${ministry.title} | IBERZ`,
-    description: ministry.summary,
+    title,
+    description,
+    alternates: {
+      canonical: canonicalPath,
+    },
+    openGraph: {
+      title: `${title} | ${siteConfig.shortName}`,
+      description,
+      url: canonicalPath,
+      type: "website",
+    },
   };
 }
 

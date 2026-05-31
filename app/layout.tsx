@@ -1,5 +1,7 @@
+import JsonLd from "@/components/json-ld";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 import SiteHeader from "@/components/site-header";
+import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
@@ -15,9 +17,41 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Iglesia Bautista El Redentor Zacamil - IBERZ",
-  description:
-    "Sitio oficial de la Iglesia Bautista El Redentor Zacamil (IBERZ), con clases y contenido actualizado.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: `${siteConfig.name} (${siteConfig.shortName})`,
+    template: `%s | ${siteConfig.shortName}`,
+  },
+  description: siteConfig.description,
+  keywords: [...siteConfig.keywords],
+  openGraph: {
+    type: "website",
+    locale: siteConfig.locale,
+    url: siteConfig.url,
+    siteName: siteConfig.shortName,
+    title: `${siteConfig.name} (${siteConfig.shortName})`,
+    description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.ogImagePath,
+        alt: `Logo ${siteConfig.shortName}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} (${siteConfig.shortName})`,
+    description: siteConfig.description,
+    images: [siteConfig.ogImagePath],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -32,8 +66,7 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <head>
-        {/* Script síncrono: aplica el tema ANTES de que React hidrate para
-            evitar el parpadeo entre modo claro y oscuro */}
+        <JsonLd />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}}catch(e){}})();`,

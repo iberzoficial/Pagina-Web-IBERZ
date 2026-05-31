@@ -1,6 +1,8 @@
 import ClassesSection from "@/components/classes-section";
 import SchedulesSection from "@/components/schedules-section";
 import { ministryLinks } from "@/lib/ministries";
+import { siteConfig } from "@/lib/site";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -12,6 +14,19 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 
+export const metadata: Metadata = {
+  title: `${siteConfig.name} (${siteConfig.shortName})`,
+  description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: `${siteConfig.name} (${siteConfig.shortName})`,
+    description: siteConfig.description,
+    url: "/",
+  },
+};
+
 export default function Home() {
   return (
     <main className="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
@@ -22,7 +37,7 @@ export default function Home() {
         <div className="absolute inset-0" aria-hidden>
           <Image
             src="/assets/Iglesia.png"
-            alt=""
+            alt="Iglesia Bautista El Redentor Zacamil (IBERZ) en Mejicanos"
             fill
             className="object-cover opacity-45 sm:opacity-50 dark:opacity-55 dark:brightness-90"
             priority
@@ -34,7 +49,10 @@ export default function Home() {
           <span className="inline-flex rounded-full border border-[var(--church-200)] bg-[var(--church-100)] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[var(--church-900)] dark:border-[var(--church-600)]/50 dark:bg-[var(--church-100)]/70 dark:text-[var(--church-900)]">
             Bienvenidos a IBERZ
           </span>
-          <h1 className="mt-5 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight text-slate-900 dark:text-white">
+          <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-[var(--church-800)] dark:text-[var(--church-300)] sm:text-base">
+            Iglesia Bautista El Redentor Zacamil · Mejicanos, El Salvador
+          </p>
+          <h1 className="mt-4 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight text-slate-900 dark:text-white">
             Una comunidad unida en la{" "}
             <span className="font-serif text-[var(--church-700)] italic">
               Gracia y la Verdad
