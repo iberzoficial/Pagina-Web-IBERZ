@@ -1,3 +1,4 @@
+import MobileBottomNav from "@/components/mobile-bottom-nav";
 import SiteHeader from "@/components/site-header";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
@@ -39,9 +40,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="flex min-h-full flex-col pb-[calc(4.75rem+env(safe-area-inset-bottom))] md:pb-0">
         <SiteHeader />
         {children}
+        <MobileBottomNav />
       </body>
     </html>
   );

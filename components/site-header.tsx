@@ -1,6 +1,5 @@
 "use client";
 
-import MobileNav from "@/components/mobile-nav";
 import ThemeToggle from "@/components/theme-toggle";
 import { ministryLinks } from "@/lib/ministries";
 import { mainNavLinks } from "@/lib/navigation";
@@ -78,7 +77,7 @@ export default function SiteHeader() {
         </div>
 
         <div className="md:hidden">
-          <MobileNav />
+          <ThemeToggle />
         </div>
       </div>
     </nav>
