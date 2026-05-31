@@ -78,11 +78,11 @@ export default function Home() {
             src="/assets/Iglesia.png"
             alt=""
             fill
-            className="object-cover opacity-45 sm:opacity-50 dark:opacity-30"
+            className="object-cover opacity-45 sm:opacity-50 dark:opacity-55 dark:brightness-90"
             priority
             unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--church-50)]/55 via-white/45 to-white/75 dark:from-slate-950/75 dark:via-slate-950/85 dark:to-slate-950/92" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--church-50)]/55 via-white/45 to-white/75 dark:from-slate-950/40 dark:via-slate-900/50 dark:to-slate-950/65" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-flex rounded-full border border-[var(--church-200)] bg-[var(--church-100)] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[var(--church-900)] dark:border-[var(--church-600)]/50 dark:bg-[var(--church-100)]/70 dark:text-[var(--church-900)]">
