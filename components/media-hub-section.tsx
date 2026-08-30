@@ -276,20 +276,22 @@ export default function MediaHubSection() {
     >
       <div id="podcast" className="sr-only" aria-hidden />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 space-y-4 sm:mb-10">
-          <span className="inline-flex rounded-full border border-church-500/25 bg-church-500/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-church-400">
-            Medios
-          </span>
-          <h2 className="font-serif text-3xl font-extrabold leading-tight sm:text-4xl">
+        <div className="mb-8 sm:mb-10">
+          <div className="mb-6 space-y-4 text-center">
+            <span className="inline-flex rounded-full border border-church-500/25 bg-church-500/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-church-400">
+              Medios
+            </span>
+          <h2 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">
             Edificación en audio y video
           </h2>
-          <p className="max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
-            Clases bíblicas, cultos dominicales y cultos de oración. Elige una
-            colección para escuchar o ver el contenido más reciente.
-          </p>
+            <p className="mx-auto max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
+              Clases bíblicas, cultos dominicales y cultos de oración. Elige una
+              colección para escuchar o ver el contenido más reciente.
+            </p>
+          </div>
 
           <div className="sticky top-16 z-20 -mx-4 overflow-x-auto bg-slate-950/95 px-4 py-2 backdrop-blur-md sm:static sm:mx-0 sm:overflow-visible sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-none">
-            <div className="flex w-max gap-2 sm:w-auto sm:flex-wrap">
+            <div className="flex flex-nowrap justify-center gap-2 sm:flex-wrap">
               {(Object.keys(MEDIA_COLLECTIONS) as MediaCollectionId[]).map(
                 (id) => {
                   const item = MEDIA_COLLECTIONS[id];
@@ -374,6 +376,15 @@ export default function MediaHubSection() {
                         </div>
                       ))}
                     </div>
+                    <a
+                      href={siteConfig.media.youtubeChannelUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-700 px-4 py-2.5 text-sm font-bold transition-colors hover:border-[var(--church-700)] hover:text-[var(--church-400)] sm:w-auto"
+                    >
+                      <FaYoutube className="text-red-500" />
+                      Ver todos los cultos en YouTube
+                    </a>
                   </div>
                 ) : (
                   <div className="rounded-2xl border border-slate-800 bg-slate-900/90 p-4 sm:p-6">
@@ -411,7 +422,7 @@ export default function MediaHubSection() {
 
                 <div className="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 sm:p-6">
                   <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                    <h4 className="text-xs font-extrabold uppercase tracking-widest text-slate-400">
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400">
                       {config.listLabel}
                     </h4>
                     <span className="shrink-0 text-xs font-semibold text-church-400">
@@ -500,7 +511,7 @@ export default function MediaHubSection() {
             <span className="inline-flex rounded-full border border-church-500/25 bg-church-500/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-church-400">
               {config.badge}
             </span>
-            <h3 className="font-serif text-2xl font-extrabold leading-tight sm:text-3xl">
+            <h3 className="font-serif text-2xl font-bold leading-tight sm:text-3xl">
               {config.heading}
             </h3>
             <p className="text-sm leading-relaxed text-slate-300 sm:text-base">

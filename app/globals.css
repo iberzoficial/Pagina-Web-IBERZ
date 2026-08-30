@@ -75,3 +75,26 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: var(--church-500);
 }
+
+/* ── Tokens semánticos Hallmark ─────────────────────────────────── */
+/* macrostructure: Split Studio · tone: institucional-cálido · anchor hue: forest-green */
+:root {
+  --color-paper:       oklch(98.5% 0.006 142);
+  --color-paper-2:     oklch(95.5% 0.010 142);
+  --color-ink:         oklch(15% 0.028 152);
+  --color-ink-2:       oklch(44% 0.022 152);
+  --color-accent:      oklch(50.5% 0.137 150);
+  --color-accent-dim:  oklch(44% 0.118 150);
+  --color-accent-pale: oklch(96% 0.028 142);
+  --color-rule:        oklch(88% 0.014 142);
+  --ease-out:          cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-short:         180ms;
+}
+.dark {
+  --color-paper:       oklch(10% 0.018 152);
+  --color-paper-2:     oklch(14.5% 0.018 152);
+  --color-ink:         oklch(94% 0.008 142);
+  --color-ink-2:       oklch(62% 0.014 142);
+  --color-rule:        oklch(21% 0.024 152);
+  --color-accent-pale: oklch(17% 0.028 152);
+}

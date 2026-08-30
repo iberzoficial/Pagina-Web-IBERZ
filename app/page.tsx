@@ -32,172 +32,147 @@ export default function Home() {
     <main className="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
       <header
         id="inicio"
-        className="relative scroll-mt-24 overflow-hidden bg-white dark:bg-slate-950 py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800"
+        className="relative scroll-mt-20 overflow-hidden flex items-center border-b border-[var(--color-rule)] dark:border-slate-800"
+        style={{ minHeight: 'calc(100vh - 4rem)', background: 'var(--color-paper)' }}
       >
+        {/* Imagen de fondo */}
         <div className="absolute inset-0" aria-hidden>
           <Image
             src="/assets/Iglesia.png"
-            alt="Iglesia Bautista El Redentor Zacamil (IBERZ) en Mejicanos"
+            alt="Iglesia Bautista El Redentor Zacamil en Mejicanos, El Salvador"
             fill
-            className="object-cover opacity-45 sm:opacity-50 dark:opacity-55 dark:brightness-90"
+            className="object-cover object-center"
             priority
             unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--church-50)]/55 via-white/45 to-white/75 dark:from-slate-950/40 dark:via-slate-900/50 dark:to-slate-950/65" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-paper)] via-[var(--color-paper)]/85 to-[var(--color-paper)]/20 dark:from-slate-950 dark:via-slate-950/88 dark:to-slate-950/20" />
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-flex rounded-full border border-[var(--church-200)] bg-[var(--church-100)] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[var(--church-900)] dark:border-[var(--church-600)]/50 dark:bg-[var(--church-100)]/70 dark:text-[var(--church-900)]">
-            Bienvenidos a IBERZ
-          </span>
-          <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-[var(--church-800)] dark:text-[var(--church-300)] sm:text-base">
-            Iglesia Bautista El Redentor Zacamil · Mejicanos, El Salvador
-          </p>
-          <h1 className="mt-4 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight text-slate-900 dark:text-white">
-            Una comunidad unida en la{" "}
-            <span className="font-serif text-[var(--church-700)] italic">
-              Gracia y la Verdad
-            </span>
-          </h1>
-          <p className="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-            Somos la <strong>Iglesia Bautista El Redentor Zacamil</strong>.
-            Nuestro anhelo es adorar a Dios, instruir a los creyentes en las
-            Escrituras y proclamar el glorioso mensaje del Evangelio en
-            Mejicanos y el mundo entero.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <a
-              href="#redes"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-bold text-white bg-[var(--church-700)] hover:bg-[var(--church-800)] transition-all shadow-lg shadow-[color:var(--church-700)]/25"
-            >
-              Conectar en Redes
-            </a>
-            <a
-              href="#horarios"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-bold text-slate-700 dark:text-slate-100 bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 hover:border-[var(--church-200)] hover:bg-[var(--church-50)] dark:hover:bg-slate-800 transition-all"
-            >
-              Horarios de cultos
-            </a>
+
+        {/* Columna de texto izquierda */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 sm:py-28">
+          <div className="max-w-xl space-y-8">
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--color-ink-2)] dark:text-slate-500">
+              Mejicanos, El Salvador
+            </p>
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.07] tracking-tight text-[var(--color-ink)] dark:text-white">
+              Una comunidad{" "}
+              <br className="hidden sm:block" />
+              unida en la{" "}
+              <span className="text-[var(--color-accent)]">Gracia</span>
+              {" "}y la{" "}
+              <span className="text-[var(--color-accent)]">Verdad</span>
+            </h1>
+            <p className="text-base sm:text-lg leading-relaxed text-[var(--color-ink-2)] dark:text-slate-300">
+              Somos la{" "}
+              <strong className="font-semibold text-[var(--color-ink)] dark:text-white">
+                Iglesia Bautista El Redentor Zacamil
+              </strong>
+              . Nuestro anhelo es adorar a Dios, instruir a los creyentes y proclamar el Evangelio en Mejicanos y el mundo entero.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="#redes"
+                className="inline-flex items-center justify-center px-7 py-3.5 rounded-lg bg-[var(--color-accent)] text-white font-semibold text-sm transition-colors hover:bg-[var(--color-accent-dim)]"
+              >
+                Conectar en Redes
+              </a>
+              <a
+                href="#horarios"
+                className="inline-flex items-center justify-center px-7 py-3.5 rounded-lg border border-[var(--color-rule)] bg-[var(--color-paper)]/80 text-[var(--color-ink)] dark:text-slate-200 dark:border-slate-700 dark:bg-slate-950/50 font-semibold text-sm transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] dark:hover:border-[var(--color-accent)] dark:hover:text-[var(--color-accent)]"
+              >
+                Horarios de cultos
+              </a>
+            </div>
           </div>
         </div>
       </header>
 
       <section
         id="redes"
-        className="scroll-mt-24 py-14 sm:py-20 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 relative"
+        className="scroll-mt-20 py-14 sm:py-20 border-t border-[var(--color-rule)] dark:border-slate-800"
+        style={{ background: 'var(--color-paper-2)' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-            <h2 className="text-base font-semibold text-[var(--church-700)] tracking-wider uppercase">
-              Portal de conexión
+          <div className="mb-10 sm:mb-14 text-center">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[var(--color-ink)] dark:text-white">
+              Redes sociales
             </h2>
-            <p className="mt-2 text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white font-serif">
-              Redes sociales oficiales
-            </p>
-            <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
-              Acompáñanos en línea, sintoniza nuestras transmisiones, comparte
-              con nosotros y mantente actualizado con todas las actividades de
-              IBERZ.
+            <p className="mt-3 text-base text-[var(--color-ink-2)] dark:text-slate-300 max-w-xl mx-auto">
+              Síguenos para transmisiones en vivo, prédicas completas, devocionales y actividades del ministerio juvenil.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
-            <article className="bg-white dark:bg-slate-950 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div>
-                <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-2xl mb-6">
-                  <FaFacebookF />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                  Facebook
-                </h3>
-                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                  Transmisiones en vivo de nuestros cultos dominicales,
-                  devocionales y anuncios comunitarios diarios.
-                </p>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {/* Facebook */}
+            <article className="flex flex-col items-center text-center rounded-2xl border border-[var(--color-rule)] dark:border-slate-800 bg-white dark:bg-slate-950 p-6 gap-4 transition-[border-color] duration-[180ms] hover:border-[var(--color-accent)] dark:hover:border-[var(--color-accent)]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 text-2xl">
+                <FaFacebookF />
               </div>
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-ink-2)] dark:text-slate-400">Facebook</span>
               <a
                 href="https://www.facebook.com/iberzoficial/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full px-5 py-3 rounded-xl text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                className="mt-auto w-full inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-blue-600 text-white text-xs font-semibold transition-colors hover:bg-blue-700"
               >
-                Seguir en Facebook
+                Seguir
               </a>
             </article>
 
-            <article className="bg-white dark:bg-slate-950 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div>
-                <div className="w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-2xl mb-6">
-                  <FaYoutube />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                  YouTube
-                </h3>
-                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                  Repositorio de prédicas completas, conferencias, ministerios
-                  infantiles y alabanzas grabadas con alta calidad.
-                </p>
+            {/* YouTube */}
+            <article className="flex flex-col items-center text-center rounded-2xl border border-[var(--color-rule)] dark:border-slate-800 bg-white dark:bg-slate-950 p-6 gap-4 transition-[border-color] duration-[180ms] hover:border-[var(--color-accent)] dark:hover:border-[var(--color-accent)]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-red-600 text-2xl">
+                <FaYoutube />
               </div>
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-ink-2)] dark:text-slate-400">YouTube</span>
               <a
                 href="https://youtube.com/@iglesiabautistaelredentorzacam?si=6YVpjUo7lGU77nQb"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full px-5 py-3 rounded-xl text-sm font-bold text-white bg-red-600 hover:bg-red-700 transition-colors"
+                className="mt-auto w-full inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-red-600 text-white text-xs font-semibold transition-colors hover:bg-red-700"
               >
                 Suscribirse
               </a>
             </article>
 
-            <article className="bg-white dark:bg-slate-950 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div>
-                <div className="w-14 h-14 rounded-2xl bg-pink-50 text-pink-600 flex items-center justify-center text-2xl mb-6">
-                  <FaInstagram />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                  Instagram
-                </h3>
-                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                  Nuestras historias cotidianas, versículos ilustrados,
-                  resúmenes de actividades juveniles y boletines visuales.
-                </p>
+            {/* Instagram */}
+            <article className="flex flex-col items-center text-center rounded-2xl border border-[var(--color-rule)] dark:border-slate-800 bg-white dark:bg-slate-950 p-6 gap-4 transition-[border-color] duration-[180ms] hover:border-[var(--color-accent)] dark:hover:border-[var(--color-accent)]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-pink-50 text-pink-600 text-2xl">
+                <FaInstagram />
               </div>
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-ink-2)] dark:text-slate-400">Instagram</span>
               <a
                 href="https://www.instagram.com/iberzoficial/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full px-5 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 transition-colors"
+                className="mt-auto w-full inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-gradient-to-r from-pink-600 to-rose-500 text-white text-xs font-semibold transition-colors hover:from-pink-700 hover:to-rose-600"
               >
-                Seguir en Instagram
+                Seguir
               </a>
             </article>
 
-            <article className="bg-white dark:bg-slate-950 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div>
-                <div className="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950/50 text-[var(--church-700)] dark:text-[var(--church-400)] flex items-center justify-center text-2xl mb-6">
-                  <FaBookBible />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                  Club Bíblico
-                </h3>
-                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                  Ministerio para prejóvenes y jóvenes los sábados. Actividades,
-                  devocionales y contenido del club en Instagram.
-                </p>
+            {/* Club Bíblico */}
+            <article className="flex flex-col items-center text-center rounded-2xl border border-[var(--color-rule)] dark:border-slate-800 bg-white dark:bg-slate-950 p-6 gap-4 transition-[border-color] duration-[180ms] hover:border-[var(--color-accent)] dark:hover:border-[var(--color-accent)]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-[var(--color-accent)] text-2xl">
+                <FaBookBible />
               </div>
-              <a
-                href="https://www.instagram.com/cbiberz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full px-5 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 transition-colors"
-              >
-                <FaInstagram className="mr-2" />
-                Ver Club Bíblico
-              </a>
-              <Link
-                href="/ministerios/club-biblico"
-                className="mt-3 inline-flex items-center justify-center w-full px-5 py-3 rounded-xl text-sm font-bold text-[var(--church-700)] border border-[var(--church-200)] hover:bg-[var(--church-50)] transition-colors dark:text-[var(--church-400)] dark:border-[var(--church-800)] dark:hover:bg-[var(--church-900)]/20"
-              >
-                Conocer el ministerio
-              </Link>
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-ink-2)] dark:text-slate-400">Club Bíblico</span>
+              <div className="mt-auto flex flex-col gap-2 w-full">
+                <a
+                  href="https://www.instagram.com/cbiberz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-gradient-to-r from-pink-600 to-rose-500 text-white text-xs font-semibold transition-colors hover:from-pink-700 hover:to-rose-600"
+                >
+                  Instagram
+                </a>
+                <Link
+                  href="/ministerios/club-biblico"
+                  className="w-full inline-flex items-center justify-center px-4 py-2 rounded-lg border border-[var(--color-rule)] dark:border-slate-700 text-[var(--color-ink-2)] dark:text-slate-400 text-xs font-semibold transition-[border-color,color] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                >
+                  Ministerio
+                </Link>
+              </div>
             </article>
           </div>
         </div>
@@ -215,12 +190,9 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div>
-                <h2 className="text-base font-semibold text-[var(--church-700)] tracking-wider uppercase">
-                  Encuéntranos
-                </h2>
-                <p className="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-serif">
+                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[var(--color-ink)] dark:text-white">
                   Nuestra ubicación
-                </p>
+                </h2>
                 <p className="mt-4 text-slate-600 dark:text-slate-300">
                   Te esperamos con los brazos abiertos en la Colonia
                   Zacamil. Nuestras instalaciones están abiertas y listas para
@@ -244,7 +216,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative bg-slate-200 dark:bg-slate-800 rounded-3xl overflow-hidden h-72 sm:h-96 shadow-lg border border-slate-200 dark:border-slate-700 group">
+            <div className="relative bg-slate-200 dark:bg-slate-800 rounded-2xl overflow-hidden h-72 sm:h-96 border border-[var(--color-rule)] dark:border-slate-700 group">
               <iframe
                 src="https://maps.google.com/maps?q=Iglesia%20Bautista%20El%20Redentor%20Zacamil,%20Mejicanos,%20El%20Salvador&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-full border-0 grayscale-[10%] contrast-[102%] group-hover:grayscale-0 transition-all duration-500"
@@ -254,7 +226,7 @@ export default function Home() {
               />
               <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-3 sm:p-4 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <div className="min-w-0">
-                  <h4 className="font-extrabold text-slate-900 dark:text-white text-xs sm:truncate">
+                  <h4 className="font-bold text-slate-900 dark:text-white text-xs sm:truncate">
                     Iglesia Bautista El Redentor
                   </h4>
                   <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
@@ -275,135 +247,92 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-slate-900 text-slate-300 border-t border-slate-800 pt-12 sm:pt-16 pb-10 sm:pb-12 dark:bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 border-b border-slate-800 pb-12 sm:grid-cols-2 lg:grid-cols-5">
-            <div className="space-y-6 sm:col-span-2 lg:col-span-2">
-              <div className="flex items-center space-x-3">
-                <Image
-                  src="/assets/Logo.jpeg"
-                  alt="Logo IBERZ footer"
-                  width={40}
-                  height={40}
-                  className="w-10 h-10 rounded-lg object-cover"
-                  unoptimized
-                />
-                <span className="text-lg font-extrabold tracking-wider text-white">
-                  IBERZ
-                </span>
-              </div>
-              <p className="text-sm text-slate-400 max-w-sm">
-                Establecidos en la Colonia Zacamil, con el firme propósito
-                de proclamar el evangelio de Cristo, capacitar a los creyentes y
-                servir con amor a la comunidad de Mejicanos.
-              </p>
-              <div className="flex space-x-4">
-                <a
-                  href="https://www.facebook.com/iberzoficial/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-slate-800 hover:bg-blue-600 hover:text-white flex items-center justify-center transition-colors"
-                >
-                  <FaFacebookF />
-                </a>
-                <a
-                  href="https://youtube.com/@iglesiabautistaelredentorzacam?si=6YVpjUo7lGU77nQb"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-slate-800 hover:bg-red-600 hover:text-white flex items-center justify-center transition-colors"
-                >
-                  <FaYoutube />
-                </a>
-                <a
-                  href="https://www.instagram.com/iberzoficial/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-slate-800 hover:bg-pink-600 hover:text-white flex items-center justify-center transition-colors"
-                  aria-label="Instagram IBERZ"
-                >
-                  <FaInstagram />
-                </a>
-                <a
-                  href="https://www.instagram.com/cbiberz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-slate-800 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition-colors"
-                  aria-label="Club Bíblico en Instagram"
-                >
-                  <FaBookBible />
-                </a>
-              </div>
-            </div>
+      <footer
+        className="bg-slate-900 text-slate-300 dark:bg-black"
+        style={{ borderTop: '3px solid var(--color-accent)' }}
+      >
+        {/* ── Letter close: declaración de misión ─── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-b border-slate-800">
+          <p className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug max-w-4xl">
+            Establecidos en la Colonia Zacamil para proclamar el evangelio de Cristo, edificar a los creyentes y servir a Mejicanos con amor y verdad.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <a
+              href="#horarios"
+              className="inline-flex items-center justify-center px-7 py-3.5 rounded-lg bg-[var(--color-accent)] text-white font-semibold text-sm transition-colors hover:bg-[var(--color-accent-dim)]"
+            >
+              Ver horarios
+            </a>
+            <a
+              href="https://maps.app.goo.gl/KX4yKpJmiiVtTZuq5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-7 py-3.5 rounded-lg border border-slate-700 text-slate-200 font-semibold text-sm transition-colors hover:border-slate-400 hover:text-white"
+            >
+              Cómo llegar
+            </a>
+          </div>
+        </div>
 
-            <div className="space-y-4">
-              <h4 className="text-white font-bold text-sm tracking-wider uppercase">
-                Secciones
-              </h4>
-              <ul className="space-y-2.5 text-sm">
-                <li>
-                  <a href="#inicio" className="hover:text-emerald-400">
-                    Inicio
-                  </a>
-                </li>
-                <li>
-                  <a href="#redes" className="hover:text-emerald-400">
-                    Redes Sociales
-                  </a>
-                </li>
-                <li>
-                  <a href="#medios" className="hover:text-emerald-400">
-                    Medios
-                  </a>
-                </li>
-                <li>
-                  <a href="#horarios" className="hover:text-emerald-400">
-                    Cultos y horarios
-                  </a>
-                </li>
-                <li>
-                  <a href="#ubicacion" className="hover:text-emerald-400">
-                    Ubicación
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="text-white font-bold text-sm tracking-wider uppercase">
-                Ministerios
-              </h4>
-              <ul className="space-y-2.5 text-sm">
-                {ministryLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="hover:text-emerald-400">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="text-white font-bold text-sm tracking-wider uppercase">
-                Declaración de fe
-              </h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Sostenemos la Biblia como nuestra única norma infalible de fe y
-                conducta, inspirada por el Espíritu Santo para transformación
-                personal y colectiva.
-              </p>
-              <span className="inline-flex items-center text-xs text-emerald-400 font-semibold uppercase">
-                Bautista
-              </span>
+        {/* ── Barra inferior: logo · ministerios · social ─── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div className="flex items-center gap-3 shrink-0">
+            <Image
+              src="/assets/Logo.jpeg"
+              alt="Logo IBERZ"
+              width={32}
+              height={32}
+              className="w-8 h-8 rounded-lg object-cover"
+              unoptimized
+            />
+            <div>
+              <span className="font-bold text-white text-sm tracking-wide">IBERZ</span>
+              <span className="text-slate-600 mx-2">·</span>
+              <span className="text-slate-400 text-xs">Colonia Zacamil, Mejicanos</span>
             </div>
           </div>
 
-          <div className="pt-8 flex flex-col items-center justify-between gap-3 text-center text-xs text-slate-500 sm:flex-row sm:text-left">
-            <p>
-              © 2026 Iglesia Bautista El Redentor Zacamil (IBERZ). Todos los
-              derechos reservados.
-            </p>
-            <p className="mt-2 sm:mt-0">Diseñado con amor y fe en El Salvador</p>
+          <nav className="flex flex-wrap gap-x-5 gap-y-1.5">
+            {ministryLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-slate-400 hover:text-white transition-colors text-xs"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-4 text-slate-500">
+            <a
+              href="https://www.facebook.com/iberzoficial/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+              aria-label="Facebook IBERZ"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="https://youtube.com/@iglesiabautistaelredentorzacam?si=6YVpjUo7lGU77nQb"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+              aria-label="YouTube IBERZ"
+            >
+              <FaYoutube />
+            </a>
+            <a
+              href="https://www.instagram.com/iberzoficial/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+              aria-label="Instagram IBERZ"
+            >
+              <FaInstagram />
+            </a>
+            <span className="text-slate-700 text-xs ml-1">© 2026</span>
           </div>
         </div>
       </footer>

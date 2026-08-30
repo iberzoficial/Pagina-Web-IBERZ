@@ -11,6 +11,7 @@ import {
   FaMugHot,
   FaPersonDress,
   FaUsers,
+  FaYoutube,
 } from "react-icons/fa6";
 
 type TimeSlot = {
@@ -28,6 +29,13 @@ type ScheduleEvent = {
   iconBg: string;
   badge: string;
   action?: {
+    href: string;
+    label: string;
+    external?: boolean;
+    className: string;
+    icon: ReactNode;
+  };
+  secondaryAction?: {
     href: string;
     label: string;
     external?: boolean;
@@ -56,8 +64,15 @@ const scheduleEvents: ScheduleEvent[] = [
       label: "Ver transmisión",
       external: true,
       className:
-        "bg-blue-600 hover:bg-blue-700 text-white shadow-sm shadow-blue-600/20",
+        "bg-blue-600 hover:bg-blue-700 text-white",
       icon: <FaFacebookF />,
+    },
+    secondaryAction: {
+      href: "https://www.youtube.com/@IglesiaBautistaElRedentorZacam",
+      label: "Ver en YouTube",
+      external: true,
+      className: "bg-red-600 hover:bg-red-700 text-white",
+      icon: <FaYoutube />,
     },
   },
   {
@@ -74,7 +89,7 @@ const scheduleEvents: ScheduleEvent[] = [
       href: "/?tab=oracion#medios",
       label: "Escuchar cultos",
       className:
-        "bg-[var(--church-700)] hover:bg-[var(--church-600)] text-white shadow-sm shadow-[color:var(--church-700)]/20",
+        "bg-[var(--church-700)] hover:bg-[var(--church-600)] text-white",
       icon: <FaHeadphones />,
     },
   },
@@ -92,7 +107,7 @@ const scheduleEvents: ScheduleEvent[] = [
       href: "/?tab=clases#medios",
       label: "Escuchar clases",
       className:
-        "bg-[var(--church-700)] hover:bg-[var(--church-600)] text-white shadow-sm shadow-[color:var(--church-700)]/20",
+        "bg-[var(--church-700)] hover:bg-[var(--church-600)] text-white",
       icon: <FaHeadphones />,
     },
   },
@@ -143,53 +158,73 @@ const scheduleEvents: ScheduleEvent[] = [
 function EventCard({ event }: { event: ScheduleEvent }) {
   return (
     <article
-      className={`relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br ${event.accent} p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:from-slate-950 dark:to-slate-900 sm:p-8`}
+      className={`relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br ${event.accent} p-4 transition-[border-color] dark:border-slate-800 dark:from-slate-950 dark:to-slate-900 sm:p-5`}
     >
-      <div className="mb-5 flex items-start justify-between gap-3">
+      {/* Cabecera */}
+      <div className="mb-4 flex items-start justify-between gap-3">
         <div
-          className={`inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-2xl sm:h-16 sm:w-16 sm:text-3xl ${event.iconBg}`}
+          className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-xl sm:h-12 sm:w-12 sm:text-2xl ${event.iconBg}`}
         >
           {event.icon}
         </div>
-        <span className="inline-flex max-w-[58%] items-start justify-end gap-1.5 rounded-xl bg-white/90 px-2.5 py-2 text-right text-[11px] font-semibold leading-snug text-slate-700 shadow-sm dark:bg-slate-900/90 dark:text-slate-200 sm:max-w-[12rem] sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm">
+        <span className="inline-flex max-w-[58%] items-start justify-end gap-1.5 rounded-xl bg-white/90 px-2.5 py-2 text-right text-[11px] font-semibold leading-snug text-slate-700 dark:bg-slate-900/90 dark:text-slate-200 sm:max-w-[12rem] sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm">
           <FaCalendarDays className="mt-0.5 shrink-0 text-[var(--church-700)] dark:text-[var(--church-400)]" />
           {event.frequency}
         </span>
       </div>
 
-      <div className="min-w-0">
-        <span className="inline-flex rounded-full bg-white/80 px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-slate-600 dark:bg-slate-900/80 dark:text-slate-300">
+      {/* Contenido — crece para empujar los chips y botones al fondo */}
+      <div className="min-w-0 flex-1">
+        <span className="inline-flex rounded-full bg-white/80 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-600 dark:bg-slate-900/80 dark:text-slate-300">
           {event.badge}
         </span>
-        <h3 className="mt-3 text-xl font-bold text-slate-900 dark:text-white sm:text-2xl">
+        <h3 className="mt-2 text-lg font-bold text-slate-900 dark:text-white sm:text-xl">
           {event.title}
         </h3>
         <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
           {event.description}
         </p>
-        <div className="mt-5 flex flex-wrap gap-2 sm:gap-3">
-          {event.timeSlots.map((slot) => (
-            <span
-              key={`${event.title}-${slot.label ?? slot.time}`}
-              className="inline-flex items-center gap-2 rounded-xl bg-[var(--church-700)] px-3 py-2 text-xs font-bold text-white shadow-md shadow-[color:var(--church-700)]/25 sm:px-4 sm:py-2.5 sm:text-sm"
-            >
-              <FaClock />
-              {slot.label ? `${slot.label}: ${slot.time}` : slot.time}
-            </span>
-          ))}
-        </div>
-        {event.action && (
-          <a
-            href={event.action.href}
-            target={event.action.external ? "_blank" : undefined}
-            rel={event.action.external ? "noopener noreferrer" : undefined}
-            className={`mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-xs font-bold transition-colors sm:w-auto ${event.action.className}`}
-          >
-            {event.action.icon}
-            {event.action.label}
-          </a>
-        )}
       </div>
+
+      {/* Horarios en una sola línea */}
+      {event.timeSlots.length > 0 && (
+        <p className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-slate-400">
+          <FaClock className="shrink-0 text-[var(--church-700)] dark:text-[var(--church-400)]" />
+          {event.timeSlots
+            .map((slot) =>
+              slot.label ? `${slot.label}: ${slot.time}` : slot.time,
+            )
+            .join(" · ")}
+        </p>
+      )}
+
+      {/* Botones — siempre en fila, mismo alto */}
+      {(event.action ?? event.secondaryAction) && (
+        <div className="mt-3 flex gap-2">
+          {event.action && (
+            <a
+              href={event.action.href}
+              target={event.action.external ? "_blank" : undefined}
+              rel={event.action.external ? "noopener noreferrer" : undefined}
+              className={`flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-xs font-bold transition-colors ${event.action.className}`}
+            >
+              {event.action.icon}
+              {event.action.label}
+            </a>
+          )}
+          {event.secondaryAction && (
+            <a
+              href={event.secondaryAction.href}
+              target={event.secondaryAction.external ? "_blank" : undefined}
+              rel={event.secondaryAction.external ? "noopener noreferrer" : undefined}
+              className={`flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-xs font-bold transition-colors ${event.secondaryAction.className}`}
+            >
+              {event.secondaryAction.icon}
+              {event.secondaryAction.label}
+            </a>
+          )}
+        </div>
+      )}
     </article>
   );
 }
@@ -205,12 +240,9 @@ export default function SchedulesSection() {
         aria-hidden
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-14">
-          <span className="inline-flex rounded-full border border-[var(--church-200)] bg-[var(--church-50)] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[var(--church-800)] dark:border-[var(--church-800)]/50 dark:bg-[var(--church-900)]/30 dark:text-[var(--church-300)]">
-            Reuniones
-          </span>
-          <h2 className="mt-4 font-serif text-2xl font-extrabold text-slate-900 dark:text-white sm:text-3xl md:text-4xl">
+          <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl md:text-4xl">
             Horarios y actividades
           </h2>
           <p className="mt-3 text-slate-600 dark:text-slate-300">
@@ -219,7 +251,7 @@ export default function SchedulesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {scheduleEvents.map((event) => (
             <EventCard key={event.title} event={event} />
           ))}

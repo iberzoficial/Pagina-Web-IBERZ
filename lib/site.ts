@@ -33,7 +33,7 @@ export const siteConfig = {
     classesPlaylistUrl:
       "https://music.youtube.com/playlist?list=PLoxl3jPkHFnS5gQ8EECpgOZErsfHu5TU0&si=wpOLKg_tFxX0RpeU",
     youtubeChannelUrl:
-      "https://youtube.com/@iglesiabautistaelredentorzacam",
+      "https://www.youtube.com/@IglesiaBautistaElRedentorZacam",
   },
 } as const;
 
