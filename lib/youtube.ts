@@ -94,8 +94,9 @@ export const MEDIA_COLLECTIONS: Record<MediaCollectionId, MediaCollectionConfig>
       emptyLabel: "cultos",
       queries: [
         {
-          q: "Oración",
-          titleRegex: /oraci[oó]n|milagros/i,
+          q: "Culto de Oración y Milagros",
+          // Evitar falsos positivos: "Adoración" contiene "oración"
+          titleRegex: /culto\s+de\s+oraci[oó]n(\s+y\s+milagros)?/i,
         },
       ],
     },
