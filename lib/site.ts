@@ -29,6 +29,12 @@ export const siteConfig = {
     "https://www.instagram.com/cbiberz",
   ],
   ogImagePath: "/assets/Logo.jpeg",
+  media: {
+    classesPlaylistUrl:
+      "https://music.youtube.com/playlist?list=PLoxl3jPkHFnS5gQ8EECpgOZErsfHu5TU0&si=wpOLKg_tFxX0RpeU",
+    youtubeChannelUrl:
+      "https://youtube.com/@iglesiabautistaelredentorzacam",
+  },
 } as const;
 
 export function absoluteUrl(path = "/"): string {

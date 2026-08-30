@@ -1,7 +1,7 @@
+import { fetchMediaCollection } from "@/lib/youtube";
 import { NextResponse } from "next/server";
-import { fetchClaseVideosFromYoutube } from "@/lib/youtube";
 
 export async function GET() {
-  const clases = await fetchClaseVideosFromYoutube();
-  return NextResponse.json({ clases });
+  const clases = await fetchMediaCollection("classes");
+  return NextResponse.json({ clases, videos: clases });
 }

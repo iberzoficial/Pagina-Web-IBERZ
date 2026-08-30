@@ -8,7 +8,6 @@ import {
   FaHandsPraying,
   FaHeadphones,
   FaInstagram,
-  FaLocationDot,
   FaMugHot,
   FaPersonDress,
   FaUsers,
@@ -72,11 +71,11 @@ const scheduleEvents: ScheduleEvent[] = [
     iconBg: "bg-violet-100 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400",
     badge: "Consagración",
     action: {
-      href: "#ubicacion",
-      label: "Asistir presencial",
+      href: "/?tab=oracion#medios",
+      label: "Escuchar cultos",
       className:
-        "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800",
-      icon: <FaLocationDot />,
+        "bg-[var(--church-700)] hover:bg-[var(--church-600)] text-white shadow-sm shadow-[color:var(--church-700)]/20",
+      icon: <FaHeadphones />,
     },
   },
   {
@@ -90,9 +89,8 @@ const scheduleEvents: ScheduleEvent[] = [
     iconBg: "bg-amber-100 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400",
     badge: "Instrucción",
     action: {
-      href: "https://music.youtube.com/playlist?list=PLoxl3jPkHFnS5gQ8EECpgOZErsfHu5TU0&si=wpOLKg_tFxX0RpeU",
-      label: "Escuchar podcast",
-      external: true,
+      href: "/?tab=clases#medios",
+      label: "Escuchar clases",
       className:
         "bg-[var(--church-700)] hover:bg-[var(--church-600)] text-white shadow-sm shadow-[color:var(--church-700)]/20",
       icon: <FaHeadphones />,

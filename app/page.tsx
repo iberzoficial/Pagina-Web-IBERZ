@@ -1,4 +1,4 @@
-import ClassesSection from "@/components/classes-section";
+import MediaHubSection from "@/components/media-hub-section";
 import SchedulesSection from "@/components/schedules-section";
 import { ministryLinks } from "@/lib/ministries";
 import { siteConfig } from "@/lib/site";
@@ -203,7 +203,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ClassesSection />
+      <MediaHubSection />
 
       <SchedulesSection />
 
@@ -351,8 +351,8 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
-                  <a href="#podcast" className="hover:text-emerald-400">
-                    Podcast
+                  <a href="#medios" className="hover:text-emerald-400">
+                    Medios
                   </a>
                 </li>
                 <li>

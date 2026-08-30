@@ -18,7 +18,7 @@ type SheetView = "ministerios" | "mas" | null;
 
 const quickLinks = [
   { href: "/#inicio", label: "Inicio", icon: FaHouse },
-  { href: "/#podcast", label: "Podcast", icon: FaHeadphones },
+  { href: "/#medios", label: "Medios", icon: FaHeadphones },
   { href: "/#horarios", label: "Horarios", icon: FaCalendarDays },
 ] as const;
 
