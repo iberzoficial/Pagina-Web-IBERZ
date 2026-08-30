@@ -142,7 +142,7 @@ const scheduleEvents: ScheduleEvent[] = [
     badge: "Ministerio de mujeres",
   },
   {
-    title: "Desayuno de mujeres",
+    title: "Mañanas de Café",
     frequency: "Cada último sábado del mes",
     timeSlots: [{ time: "8:30 AM" }],
     description:
